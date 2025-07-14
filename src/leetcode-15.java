@@ -35,15 +35,21 @@ class Solution {
      * @return a list of lists containing the unique triplets
      */
     public List<List<Integer>> threeSum(int[] nums) {
-        // 1. Initialize a set to store unique triplets
-        Set<List<Integer>> result = new HashSet<>();
+        // 1. Initialize a List to store the result triplets
+        List<List<Integer>> result = new HashSet<>();
 
-        // 2. Sort the input array to facilitate the two-pointer technique
+        // 2. Check if the input array is null or has fewer than 3 elements
+        if  (nums == null || nums.length < 3) {
+            return result;
+        }
+
+
+        // 3. Sort the input array to facilitate the two-pointer technique
         Arrays.sort(nums);
 
-        // 3. Iterate through the array to find triplets
-        for (int index = 0; index < nums.length - 1; index++) {
-            // 4. Skip duplicate elements to avoid duplicate triplets
+        // 4. Iterate through the array to find triplets
+        for (int index = 0; index < nums.length - 2; index++) {
+            // 4.1. Skip duplicate elements to avoid duplicate triplets
             if (index > 0 && nums[index] == nums[index - 1]) {
                 continue;
             }
@@ -85,7 +91,7 @@ class Solution {
             }
         }
 
-        // 7. Convert the set of unique triplets to a list and return it
-        return new ArrayList<>(result);
+        // 7. Return the result as a list of lists
+        return result;
     }
 }
