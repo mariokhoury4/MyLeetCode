@@ -36,7 +36,7 @@ class Solution {
      */
     public List<List<Integer>> threeSum(int[] nums) {
         // 1. Initialize a List to store the result triplets
-        List<List<Integer>> result = new HashSet<>();
+        List<List<Integer>> result = new ArrayList<>();
 
         // 2. Check if the input array is null or has fewer than 3 elements
         if  (nums == null || nums.length < 3) {
