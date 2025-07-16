@@ -36,29 +36,33 @@
  * --> nums is sorted in non-decreasing order.
  */
 class Solution {
+    /**
+     * Remove duplicates from a sorted array in-place.
+     * @param nums The input array of integers sorted in non-decreasing order
+     * @return The number of unique elements in the array after removing duplicates
+     */
     public int removeDuplicates(int[] nums) {
+        // Check if the input array is null or empty
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        if (nums.length == 1) {
-            return 1;
-        }
-        int i = 1;
-        int n = nums.length;
-        int uniqueCount = 1;
-        int skipCount = 0;
 
-        while (i < (n - skipCount)) {
-            if (nums[i] == nums[i - 1]) {
-                skipCount = skipCount + 1;
-                for (int j = i; j < n - 1; j++) {
-                    nums[j] = nums[j + 1];
-                }
-                continue;
+        // Initialize the count of unique elements
+        int uniqueCount = 0;
+
+        // Start iterating from the second element
+        int i = 1;
+
+        // Loop through the array to find unique elements
+        while (i < nums.length) {
+            // If the current element is different from the last unique element,
+            if (nums[i] != nums[uniqueCount]) {
+                uniqueCount++;
+                nums[uniqueCount] = nums[i];
             }
-            uniqueCount = uniqueCount + 1;
-            i = i + 1;
+            i++;
         }
-        return uniqueCount;
+        // Return the count of unique elements plus one for the first element
+        return uniqueCount + 1;
     }
 }
