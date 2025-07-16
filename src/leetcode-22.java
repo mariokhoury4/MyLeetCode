@@ -25,6 +25,13 @@ class Solution {
         return new ArrayList<>(result);
     }
 
+    /**
+     * Recursive helper method to generate parentheses combinations.
+     * @param current the current string being built.
+     * @param n the total number of pairs of parentheses.
+     * @param currentOpen the number of open parentheses in the current string.
+     * @param result the set to store unique combinations of parentheses.
+     */
     private void generateParenthesisRecursive(String current, final int n, int currentOpen, Set<String> result) {
         if (current.length() == n * 2) {
             result.add(current);
