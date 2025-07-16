@@ -14,13 +14,18 @@
  * --> 1 <= n <= 8
  */
 class Solution {
-    public List<String> generateParenthesis(int n) {
+    /**
+     * Generate all combinations of well-formed parentheses.
+     * @param n the number of pairs of parentheses.
+     * @return a list of strings representing all combinations of well-formed parentheses.
+     */
+    public List<String> generateParenthesis(final int n) {
         Set<String> result = new HashSet<>();
         generateParenthesisRecursive("", n, 0, result);
         return new ArrayList<>(result);
     }
 
-    private void generateParenthesisRecursive(String current, int n, int currentOpen, Set<String> result) {
+    private void generateParenthesisRecursive(String current, final int n, int currentOpen, Set<String> result) {
         if (current.length() == n * 2) {
             result.add(current);
             return;
