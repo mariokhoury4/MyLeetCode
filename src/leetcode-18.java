@@ -34,14 +34,14 @@ class Solution {
 
         // 3. Iterate through the array with two nested loops
         for (int i = 0; i < nums.length - 3; i++) {
-            // 3.1 skip duplicate i
+            // 3.1 skip duplicate for i
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
 
             // 3.2 Iterate through the array with a second loop
             for (int j = i + 1; j < nums.length - 2; j++) {
-                // 3.3 skip duplicate j
+                // 3.3 skip duplicate for j
                 if (j > i + 1 && nums[j] == nums[j - 1]) {
                     continue;
                 }
@@ -53,7 +53,7 @@ class Solution {
                 // 4. While the left pointer is less than the right pointer
                 while (left < right) {
                     // 4.1 Calculate the sum of the four numbers
-                    final long sum = nums[i] + nums[j] + nums[left] + nums[right];
+                    final long sum = (long) nums[i] + nums[j] + nums[left] + nums[right];
 
                     // 4.2 Check if the sum equals the target
                     if (sum == target) {
@@ -83,6 +83,6 @@ class Solution {
         }
 
         // 5. Return the list of unique quadruplets
-        return new ArrayList<>(result);
+        return result;
     }
 }
