@@ -8,4 +8,6 @@ leetcode-44 (Match Wildcard)
 leetcode-57 (Insert Interval)
 leetcode-59 (Spiral Matrix II)
 leetcode-60 (Permutation Sequence) - brute force worked how to do it n2?
+leetcode-68 (Text Justification) - didn't do it
+leetcode-71 (Simplify Path) - to do alone
 
