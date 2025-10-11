@@ -12,4 +12,5 @@ leetcode-68 (Text Justification) - didn't do it
 leetcode-71 (Simplify Path) - to do alone
 leetcode-72 (Edit Distance) - didn't do
 leetcode-75 (Sort Colors) - to redo
+leetcode-77 (Minimum Window Substring) - to redo
 
